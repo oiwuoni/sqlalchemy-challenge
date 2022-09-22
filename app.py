@@ -64,15 +64,6 @@ def Tobs():
     return jsonify(last_year_data_list)
 
 
-@app.route("/api/v1.0/start")
-def Start():
-    print("Server received request for the starting range data")
-    lowest_temp_start = session.query(func.min(Measurement.tobs)).filter(Measurement.date >= '2016-08-23').all()
-    average_temp_start = session.query(func.avg(Measurement.tobs)).filter(Measurement.date >= '2016-08-23').all()
-    highest_temp_start = session.query(func.max(Measurement.tobs)).filter(Measurement.date >= '2016-08-23').all()
-    return jsonify(lowest_temp_start, average_temp_start, highest_temp_start)
-
-
 
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
