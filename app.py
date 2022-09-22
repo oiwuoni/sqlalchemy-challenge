@@ -91,7 +91,7 @@ def stats(start=None, end=None):
         # temps = list(np.ravel(results))
         # return jsonify(temps)
 
-        start = dt.datetime.strptime("8/23/2016", "%m%d%Y")
+        start = dt.datetime.strptime("8232016", "%m%d%Y")
         results = session.query(*sel).\
             filter(Measurement.date >= start).all()
 
@@ -101,8 +101,8 @@ def stats(start=None, end=None):
         return jsonify(temps)
 
     # calculate TMIN, TAVG, TMAX with start and stop
-    start = dt.datetime.strptime("8/23/2016", "%m%d%Y")
-    end = dt.datetime.strptime("8/17/2017", "%m%d%Y")
+    start = dt.datetime.strptime("8232016", "%m%d%Y")
+    end = dt.datetime.strptime("8172017", "%m%d%Y")
 
     results = session.query(*sel).\
         filter(Measurement.date >= start).\
